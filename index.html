@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AllSPORTS</title>
+    <link href="styles/common_style.css" type="text/css" rel="stylesheet">
+    <style>
+		/*@import url(styles/common_style.css);*/
+
+        article {
+            width: 580px;
+            height: 400px;
+        }
+        #pic {
+            background-image: url("images/축구장.jpg");
+            background-size: 585px 400px;
+            background-repeat: no-repeat; 
+        } 
+        #picbtn {
+            text-align: right;
+        }
+        div#News {
+            margin-left: 15px;
+            width: 285px;
+            height: 350px;
+            float: left;
+            text-align: center;
+            background-color: lightblue;
+        }
+        div#Best {
+            margin-left: 5px;
+            width: 285px;
+            height: 350px;
+            float: left;
+            text-align: center;
+            background-color: lightsteelblue
+        }
+        div h2{
+            font-size: 1.7em;
+            
+        }
+        
+    </style>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+        	<div id="join">
+        		<a href="member/join.html">Join</a>
+        		<a href="member/login.html">Login</a>
+        	</div>
+        	
+        	<nav id="header-menu">
+        		<ul id="heder-menuul">
+        			<li><a href="index.html">Home</a></li>
+        			<li><a href="result/result.html">Game Result</a></li>
+        			<li><a href="News/News.html">News</a></li>
+        			<li><a href="chat/chat.html">Chat</a></li>
+        			<li><a href="board/board.html">Board</a></li>
+        		</ul>
+        	</nav>
+        </header>
+        <nav id="side-menu">
+            <ul id="side">
+                <li id="foot"><a>FootBall</a></li>
+                    <ul id="list0">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+                    
+                <li id="base"><a>BaseBall</a></li>
+                    <ul id="list1">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+
+                <li id="basket"><a>BasketBall</a></li>
+                    <ul id="list2">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+
+                <li id="es"><a>E-Sports</a></li>
+                    <ul id="list3">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+            </ul>
+        </nav>
+            
+        <section>
+            <article id="pic">
+                
+            </article>
+            <div id="picbtn">
+                <input type="button" value="1" id="btn1">
+                <input type="button" value="2" id="btn2">
+                <input type="button" value="3" id="btn3">
+                <input type="button" value="4" id="btn4">
+            </div>
+            
+        </section>
+        <div id="News"> 
+            <h2>News</h2>
+            <hr>
+            <h3>lorem</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Id repudiandae aut consequuntur temporibus, laboriosam, mollitia adipisci animi alias sunt, quod eius laudantium obcaecati nemo? Reprehenderit culpa accusamus dolorem accusantium nemo.</p>
+
+        </div>
+        <div id="Best">
+            <h2>Best</h2>
+            <hr>
+            <h3>lorem</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Id repudiandae aut consequuntur temporibus, laboriosam, mollitia adipisci animi alias sunt, quod eius laudantium obcaecati nemo? Reprehenderit culpa accusamus dolorem accusantium nemo.</p>
+        </div>
+        <footer>
+            <div id="all">ALL</div>
+            <div id="allinfo">E-MAIL allsports@sp.net <br> TEL 000-1234-5678 <br> FAX 09-29-2924</div>
+            <div id="icon"></div>
+            <div id="icon2"></div>
+        </footer>
+    </div>
+
+    <span id="slide">≡</span>
+    <nav id="slide-menu">
+        <ul>
+        	<h4>Favorite</h4>
+            <li>BaseBall</li>
+            <li>Board</li>
+            <li>Game Result</li>
+        </ul>
+    </nav>
+
+    <div id="curtain"></div>
+
+    <script src="scripts/common_script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AllSPORTS</title>
+    <link href="../styles/common_style.css" type="text/css" rel="stylesheet">
+    <style>
+		/*@import url(styles/common_style.css);*/
+
+        article {
+	        border: 1px solid black;
+            width: 540px;
+            height: auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        ul#side {
+            height: 1850px;
+        }
+        
+        #footpic {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            background-image: url("../images/축1.jpg");
+            background-size: 300px 200px;
+        }
+        #basepic {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            background-image: url("../images/야1.jpg");
+            background-size: 300px 200px;
+        }
+        #basketpic {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            background-image: url("../images/농1.jpg");
+            background-size: 300px 200px;
+        }
+        #esportspic {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            background-image: url("../images/e1.jpg");
+            background-size: 300px 200px;
+        }
+        #logo {
+            background-color: rgb(176,088,088);
+        }
+    </style>
+    <script src="../scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+        	<div id="join">
+        		<a href="../member/join.html">Join</a>
+        		<a href="../member/login.html">Login</a>
+        	</div>
+        	
+        	<nav id="header-menu">
+        		<ul>
+        			<li><a href="../index.html">Home</a></li>
+        			<li><a href="../result/result.html">Game Result</a></li>
+        			<li><a href="../News/News.html">News</a></li>
+        			<li><a href="../chat/chat.html">Chat</a></li>
+        			<li><a href="../board/board.html">Board</a></li>
+        		</ul>
+        	</nav>
+        </header>
+        <nav id="side-menu">
+            <ul id="side">
+                <li id="foot"><a>FootBall</a></li>
+                <ul id="list0">
+                    <li>Game Result</li>
+                    <li>News</li>
+                    <li>Board</li><br>
+                </ul>    
+                
+            <li id="base"><a>BaseBall</a></li>
+                <ul id="list1">
+                    <li>Game Result</li>
+                    <li>News</li>
+                    <li>Board</li><br>
+                </ul>    
+
+            <li id="basket"><a>BasketBall</a></li>
+                <ul id="list2">
+                    <li>Game Result</li>
+                    <li>News</li>
+                    <li>Board</li><br>
+                </ul>    
+
+            <li id="es"><a>E-Sports</a></li>
+                <ul id="list3">
+                    <li>Game Result</li>
+                    <li>News</li>
+                    <li>Board</li><br>
+                </ul> 
+            </ul>
+        </nav>
+            
+        <section>
+                <div id="logo">
+                        <div class="result">NEWS</div>                
+                        <div id="line"></div>
+                        <div class="result">COLLECTION</div>
+                </div>
+            <article>
+                <h3>Recent News FootBall</h3>
+                <hr>
+                    <div id="footpic"></div>
+                <p>Lorem ipsum dolor </p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore aperiam harum officia minus nisi vero accusantium distinctio quo quaerat architecto</p>
+            </article>
+            <article>
+                <h3>Recent News BaseBall</h3>
+                <hr>
+                    <div id="basepic"></div>
+                <p>Lorem ipsum dolor </p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore aperiam harum officia minus nisi vero accusantium distinctio quo quaerat architecto</p>
+            </article>
+            <article>
+                <h3>Recent News BasketBall</h3>
+                <hr>
+                <div id="basketpic"></div>
+                <p>Lorem ipsum dolor </p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore aperiam harum officia minus nisi vero accusantium distinctio quo quaerat architecto</p>
+            </article>
+            <article>
+                <h3>Recent News E-Sports</h3>
+                <hr>
+                <div id="esportspic"></div>
+                <p>Lorem ipsum dolor </p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore aperiam harum officia minus nisi vero accusantium distinctio quo quaerat architecto</p>
+            </article>
+        </section>
+        <footer>
+            <div id="all">ALL</div>
+            <div id="allinfo">E-MAIL allsports@sp.net <br> TEL 000-1234-5678 <br> FAX 09-29-2924</div>
+            <div id="icon"></div>
+            <div id="icon2"></div>
+        </footer>
+    </div>
+
+    <span id="slide">≡</span>
+    <nav id="slide-menu">
+        <ul>
+        	<h4>즐겨찾는 메뉴</h4>
+            <li>야구게시판</li>
+            <li>자유게시판</li>
+            <li>야구경기결과</li>
+        </ul>
+    </nav>
+
+    <div id="curtain"></div>
+
+    <script src="../scripts/common_script.js"></script>
+</body>
+</html>

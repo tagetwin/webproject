@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AllSPORTS</title>
+    <link href="../styles/common_style.css" type="text/css" rel="stylesheet">
+    <style>
+		/*@import url(/styles/common_style.css);*/
+
+        article {
+            background-color: #f1f1f1;
+            border: 1px solid black;
+            width: 500px;
+            margin: 15px auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        article.comment {
+        	width: 500px;
+        	background-color: teal;
+        	padding: 10px
+        	
+        }
+        
+        span#span-comment {
+        	display: inline-block;
+        	width: 70px;
+        	height: 23px;
+        	border: 1px solid gray;
+        	text-align: center;
+        	font-size: 13px;
+        	font-weight: bold;
+        	background-color: white;
+			cursor: pointer;
+			margin-left: 30px;
+        }
+        
+        span#span-comment:active {
+        	background-color: orange;
+        	position: relative;
+        	top: 1px;
+        	left: 1px;
+        }
+        
+        div#comment-area {
+        	margin-top: 20px;
+        	padding: 10px;
+        	border-top: 1px solid gray;
+        	border-bottom: 1px solid gray;
+        	background-color: lightgray;
+        	display: none;
+        }
+        
+        div#comment-write {
+        	border: 1px solid gray;
+        	padding: 20px;
+        	background-color: white;
+        	margin-top: 10px;
+        }
+        
+        div#comment-list {
+        	padding: 20px;
+        	
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+			<div id="join">
+        		<a href="../member/join.html">Join</a>
+        		<a href="../member/login.html">Login</a>
+        	</div>
+        	
+        	<nav id="header-menu">
+        		<ul>
+        			<li><a href="../index.html">Home</a></li>
+        			<li><a href="../result/result.html">Game Result</a></li>
+        			<li><a href="../News/News.html">News</a></li>
+        			<li><a href="../chat/chat.html">Chat</a></li>
+        			<li><a href="../board/board.html">Board</a></li>
+        		</ul>
+        	</nav>
+        </header>
+        <nav id="side-menu">
+        	<ul id="side">
+				<li id="foot"><a>FootBall</a></li>
+                    <ul id="list0">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+                    
+                <li id="base"><a>BaseBall</a></li>
+                    <ul id="list1">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+
+                <li id="basket"><a>BasketBall</a></li>
+                    <ul id="list2">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+
+                <li id="es"><a>E-Sports</a></li>
+                    <ul id="list3">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul> 
+            </ul>
+		</nav>
+        <section>
+            <article>
+                <h3>Nu dignissim diam. Mauris vitae magna ipsum,</h3>
+                <div>2019. 11. 29. 오후 12:30</div>
+                <hr>
+<pre>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+ Ipsa aliquam,sed incidunt laudantium debitis doloremque?
+
+ Nihil, enim. Laborum quam quia perferendis!
+
+ Repellendus libero cupiditate culpa et autem quis, ut excepturi.
+</pre>
+            </article>
+            
+            <span id="span-comment">댓글 ∨</span>
+            <div id="comment-area">
+            	<div id="comment-list"></div>
+            	<div id="comment-write">
+            		<form id="frm">
+            		이름 : <input type="text" name="name"><br>
+            		댓글내용 : <br>
+            		<textarea rows="3" cols="50" name="content"></textarea>
+            		<span id="char-counter">0/100</span>
+            		<br>
+            		<button type="button" id="btnReg">등록</button>
+            		</form>
+            	</div>
+            </div>
+            
+        </section>
+        <footer>
+			<div id="all">ALL</div>
+			<div id="allinfo">E-MAIL allsports@sp.net <br> TEL 000-1234-5678 <br> FAX 09-29-2924</div>
+			<div id="icon"></div>
+			<div id="icon2"></div>
+		</footer>
+    </div>
+
+    <span id="slide">≡</span>
+    <nav id="slide-menu">
+         <ul>
+        	<h4>즐겨찾는 메뉴</h4>
+            <li>야구게시판</li>
+            <li>자유게시판</li>
+            <li>야구경기결과</li>
+        </ul>
+    </nav>
+
+    <div id="curtain"></div>
+
+	<script src="../scripts/jquery-3.4.1.min.js"></script>
+    <script src="../scripts/common_script.js"></script>
+    <script>
+    	function deleteComment (bnum, cnum, btn) {
+    		//댓글 삭제 요청
+    		$.ajax({
+    			url: 'deleteComment.jsp',
+    			data: { bnum: bnum, cnum: cnum },  // 'bnum=' + 1 
+    			success: function (data) {
+    				console.log(data);
+    				if (data > 0) {
+    					let commentArticle = btn.parentElement.parentElement;
+    					objCommentList.removeChild(commentArticle);
+    				}
+    				alert('댓글번호' + cnum + '삭제 실패했습니다..');
+    			}
+    		});
+    	}//deleteComment
+    
+    	function showComments(array) {
+    		let str = '';
+    		for (let comment of array) {
+    			//str += comment.bnum + ', ' + comment.cnum + ', ' + comment.name + ', ' + comment.content + ', ' + comment.regDate + '<br>';
+    			
+    			str += '<article class="comment">';
+    			str += '<div class="comment-writer">' + comment.name + '</div>'
+    			str += '<div class="comment-content">' + comment.content + '</div>'
+    			str += '<div class="comment-regdate">' + comment.regDate + '</div>'
+    			str += '<div class="comment-control">';
+    			str += '<button type="button" class="comment-delete" data-bnum="'+comment.bnum+'" data-cnum="'+comment.cnum+'">';
+    			str += '삭제';
+    			str +='</button>'
+    			str +='</div>'
+    			
+    			str+= '</article>';
+    			
+    		}
+    		objCommentList.innerHTML = str;
+    	} //showComments
+    
+    	function getCommentList() {
+    		$.ajax({
+    			url: 'selectAllByBnum.jsp',
+    			data: { bnum: 1 },  // 'bnum=' + 1 
+    			success: function (arr) {
+    				console.log(arr);
+    				showComments(arr);
+    			}
+    		});
+    	} // getCommentList
+    
+    	var objCommentList = document.querySelector('div#comment-list');
+    	var objContent = document.querySelector('textarea[name=content]');
+    	var objSpanCounter = document.querySelector('span#char-counter');
+    	var objSpanBtn = document.querySelector('span#span-comment');
+    	var objCommentArea = document.querySelector('div#comment-area');
+    	var btnReg = document.getElementById('btnReg');
+    	
+    	var isStretch = false; // span버튼 펼쳐짐 여부
+    	
+    	objSpanBtn.addEventListener('click', function (event) {
+    		if (isStretch) {
+    			objCommentArea.style.display = 'none';
+    			objSpanBtn.innerHTML = '댓글 ∨';
+    			isStretch = false;
+    		} else {
+    			objCommentArea.style.display = 'block';
+    			objSpanBtn.innerHTML = '댓글 ∧';
+    			isStretch = true;
+    		}
+    	});
+    	
+    	objContent.addEventListener('keyup', function (event) {
+    		//event.target.value
+    		var strLength = objContent.value.length;
+    		if (strLength > 100) {
+    			objSpanCounter.style.color = 'red';
+    		} else {
+    			objSpanCounter.style.color = 'green';
+    		}
+    		objSpanCounter.innerHTML = strLength + '/100';
+    	});
+    	
+    	btnReg.addEventListener('click', function (event) {
+    		var str = $('#frm').serialize(); // 'name=홍길동&content=댓글내용'
+    		console.log(str);
+    		
+    		$.ajax({
+    			url: 'insertComment.jsp',
+    			data: str,
+    			method: 'POST',
+    			success: function (data) {
+    				if (data > 0) {
+    					getCommentList();
+    				} else {
+    					alert('댓글 등록이 실패했습니다..')
+    				}
+    			}
+    		});
+    	});
+    	
+    	//동적 이벤트 바인딩
+    	$(document).on('click', 'button.comment-delete', function (event) {
+    		// event.target 클릭한 버튼
+    		// this 클릭한 버튼
+    		let bnum = $(this).data('bnum');
+    		let cnum = $(this).data('cnum');
+    		console.log('bnum = ' + bnum + ', cnum = ' + cnum);
+    		
+    		let result = confirm(cnum + '번 댓글을 삭제할까요?');
+    		
+    		if (result == false) {
+    			return;
+    		}
+    		deleteComment (bnum, cnum, this);
+    	});
+    	
+    	// getCommentList();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,251 @@
+      div#container {
+          width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+		  
+          
+      }
+
+      header {
+          height: 170px;
+          background-color: #609E57;
+          background-image : url("../images/head.jpg");
+          background-repeat: no-repeat;
+          
+      }
+
+      footer {
+          height: 100px;
+          background-color: #609E57;
+          clear: both;
+      }
+      
+
+      /* nav#side-menu {
+          height: 800px;
+          width: 25%;
+          background-color: #f1f1f1;
+          float: left;
+      } */
+    ul#side {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        height: 800px;
+        background-color: #f1f1f1;
+        float:left;
+        
+    }
+    ul#side li > a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+        background: lightblue;
+        color: black;
+    }
+    
+
+    ul#side li a:hover{
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+    }
+
+      span#slide {
+          font-size: 2em;
+          font-weight: bold;
+          position: absolute;
+          left: 30px;
+          top: 10px;
+          cursor: pointer;
+          z-index: 10;
+      }
+
+      nav#slide-menu {
+          width: 220px;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: -330px;
+          padding: 100px 0 80px 0;
+          background-color: lightgreen;			
+          transition: transform 0.5s;
+
+          z-index: 9;
+      }
+
+      div#curtain {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+
+          background-color: gray;
+          opacity: 0;
+          z-index: -8;
+      }
+      
+      div#join {
+      	text-align: right;
+      	padding-right: 10px;
+      }
+      
+      a {
+        color: black;  
+        text-decoration: none;
+      	
+      }
+      
+      a:hover {
+      	color: orange;
+	}
+
+	a:active {
+	color: red;
+	}
+
+	div#join > a {
+	margin-right: 10px;
+	      	float: right;
+	
+	}
+      
+     nav#header-menu {
+      	width: 760px;
+      	margin-left: auto;
+      	margin-right: auto;
+      	margin-top: 107px;
+      	padding-top: 1px;
+      	padding-bottom: 1px;
+      	border-radius: 10px;
+      	display:inline-block;
+      	
+      }
+      
+      nav#header-menu ul {
+      	width: 500px;
+      	margin-left: auto;
+      	margin-right: auto;
+      }
+      
+      nav#header-menu li {
+      	display: inline;
+      	margin-left: 20px;
+        margin-right: 20px;
+         
+      }
+      
+      section {
+        width: 72%;
+        float: right;
+        padding: 10px;
+        background-color: snow;
+      }
+      
+      article#soccer {
+        	
+        width: 250px;
+        float : left;
+        margin-right: 20px;
+        margin-bottom: 40px;
+        background : url("../images/ball1.jpg");
+        background-position: right bottom;
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+    }
+     article#baseball {
+        background-color: lightblue;
+        width: 250px;
+        float : left;
+        background : url("../images/ball2.jpg");
+        background-position: right bottom;
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        
+    }
+     article#basketball {
+        background-color: brown;
+        width: 250px;
+        float : left;
+        margin-right: 20px;
+        background : url("../images/ball3.jpg");
+        background-position: right bottom;
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        
+    }
+     article#esports {
+        background-color: lightgray;
+        width: 250px;
+        float : left;
+        background : url("../images/e.png");
+        background-position: right bottom;
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+    }
+    div#all {
+        color: white;
+        border-color: blacks;
+        font-size: 75px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-style: italic;
+        float: left;
+        margin-right: 20px;
+    }
+    div#allinfo {
+        text-align: center;
+        padding-top: 20px;
+        float: left;
+        margin-left: 150px;
+        margin-right: auto;
+    }
+    div#icon {
+        width: 100px;
+        height: 100px;
+        background: url("../images/line.png");
+        background-size: 70px 70px;
+        background-repeat: no-repeat;
+        background-position: right;
+        float: right;
+        margin-right: 10px;
+        
+    }
+    div#icon2 {
+        width: 100px;
+        height: 100px;
+        background: url("../images/kakao.png");
+        background-size: 70px 70px;
+        background-repeat: no-repeat;
+        background-position: right;
+        float: right;
+    }
+    #logo {
+        height: 100px;
+        width: 553px;
+        
+        margin-bottom: 10px;
+        font-style: italic;
+        font-size: 40px;
+        text-align: right;
+        
+        padding-right: 10px;
+        color:white;
+
+    }
+    .result {
+        margin-right: 15px;
+        margin-top: -10px;
+    }
+    #line {
+        background-color: white;
+        height: 5px;
+        width: 590px;
+    }
+
+      

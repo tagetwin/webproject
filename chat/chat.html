@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AllSPORTS</title>
+    <link href="../styles/common_style.css" type="text/css" rel="stylesheet">
+    <style>
+    	div#messages {
+    		width: 540px;
+    		height: 400px;
+    		
+    		
+    		padding: 10px;
+    		background-color: rgb(164,194,038);
+    		border: 1px solid black;
+    		border-radius: 20px;
+    		overflow: auto;
+    	}
+    	
+    	div#control {
+    		width: 400px;
+    		margin-left: auto;
+    		margin-right: auto;
+    		padding: 10px;
+    	}
+    	
+    	span#nickname {
+    		font-weight: bold;
+    		font-style: italic;
+    		font-size: 1.5em;
+		}
+		#logo {
+			background-color: rgb(115, 156, 006);
+		}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+        	
+        	<div id="join">
+        		<a href="../member/join.html">Join</a>
+        		<a href="../member/login.html">Login</a>
+        	</div>
+        	
+        	<nav id="header-menu">
+        		<ul>
+        			<li><a href="../index.html">Home</a></li>
+        			<li><a href="../result/result.html">Game Result</a></li>
+        			<li><a href="../News/News.html">News</a></li>
+        			<li><a href="../chat/chat.html">Chat</a></li>
+        			<li><a href="../board/board.html">Board</a></li>
+        		</ul>
+        	</nav>
+        </header>
+        <nav id="side-menu">
+			<ul id="side">
+				<li id="foot"><a>FootBall</a></li>
+                    <ul id="list0">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+                    
+                <li id="base"><a>BaseBall</a></li>
+                    <ul id="list1">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+
+                <li id="basket"><a>BasketBall</a></li>
+                    <ul id="list2">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul>    
+
+                <li id="es"><a>E-Sports</a></li>
+                    <ul id="list3">
+                        <li>Game Result</li>
+                        <li>News</li>
+                        <li>Board</li><br>
+                    </ul> 
+            </ul>
+		</nav>
+		
+        <section>
+			<div id="logo">
+				<div class="result">CHAT</div>                
+				<div id="line"></div>
+				<div class="result">ROOM</div>
+			</div>
+			<div id="messages"></div>
+			
+			<div id="control">
+				nickName : <span id="nickname">BatMan</span>
+				<input type="text" id="message">
+				<button type="button" id="btnSend">Send</button>
+			</div>
+        </section>
+        <footer>
+			<div id="all">ALL</div>
+			<div id="allinfo">E-MAIL allsports@sp.net <br> TEL 000-1234-5678 <br> FAX 09-29-2924</div>
+			<div id="icon"></div>
+			<div id="icon2"></div>
+		</footer>
+    </div>
+
+    <span id="slide">≡</span>
+    <nav id="slide-menu">
+         <ul>
+        	<h4>즐겨찾는 메뉴</h4>
+            <li>야구게시판</li>
+            <li>자유게시판</li>
+            <li>야구경기결과</li>
+        </ul>
+    </nav>
+
+    <div id="curtain"></div>
+	
+	<script src="../scripts/common_script.js"></script>
+	<script>
+		function send() {
+			if (objMessage.value == ''){
+				return;
+			}
+			let str = nickname + ' ▶ ' + objMessage.value + '<br>';
+			objMessages.innerHTML += str;
+			objMessage.value = '';
+			
+			objMessages.scrollTop = objMessages.scrollHeight;
+		}
+	
+	</script>
+    <script>
+		let objMessages = document.getElementById('messages');	
+    	let objNick = document.getElementById('nickname');
+ 		let nickname = objNick.innerText;
+ 		
+ 		let objMessage = document.getElementById('message');
+ 		let btnSend = document.getElementById('btnSend');
+ 		
+ 		btnSend.addEventListener('click', function (event){
+ 			send();
+ 		});
+ 		
+ 		objMessage.addEventListener('keydown', function(event){
+ 			console.log(event.key);
+ 			if(event.key='Enter'){
+ 				send();
+ 			}
+ 		});
+ 		
+ 		objMessage.focus();
+ 		
+    </script>
+</body>
+</html>
